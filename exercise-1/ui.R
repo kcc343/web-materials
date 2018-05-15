@@ -1,12 +1,16 @@
 # ui.R
 library(shiny)
 library(plotly)
-shinyUI(navbarPage(
+tags$head(
+  tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+)
+shinyUI(
+  navbarPage(
   "Electoral College",
   # Create a tab panel for your map
   tabPanel(
     "Map",
-    titlePanel("Electoral College Votes"),
+    titlePanel(tags$h1("Electoral College Votes")),
     # Create sidebar layout
     sidebarLayout(
 
