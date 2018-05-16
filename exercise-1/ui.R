@@ -1,22 +1,20 @@
 # ui.R
 library(shiny)
 library(plotly)
-tags$head(
-  tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
-)
+
 shinyUI(
   navbarPage(
   "Electoral College",
   # Create a tab panel for your map
   tabPanel(
     "Map",
-    titlePanel(tags$h1("Electoral College Votes")),
+    titlePanel("Electoral College Votes"),
     # Create sidebar layout
     sidebarLayout(
 
       # Side panel for controls
       sidebarPanel(
-
+        tags$h1("You can interact with this map"),
         # Input to select variable to map
         selectInput(
           "mapvar",
@@ -31,7 +29,8 @@ shinyUI(
 
       # Main panel: display plotly map
       mainPanel(
-        plotlyOutput("map")
+        plotlyOutput("map"),
+        tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
       )
     )
   )
